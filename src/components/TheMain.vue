@@ -1,7 +1,7 @@
 <template>
     <div class="content-container">
-      <h1 class="title">BD Law</h1>
-      <h1 class="tagline">LET'S GET LEGAL</h1>
+      <h1 v-cloak class="title">BD Law</h1>
+      <h1 v-cloak class="tagline">LET'S GET LEGAL</h1>
     </div>
 </template>
 

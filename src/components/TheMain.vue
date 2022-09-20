@@ -1,6 +1,12 @@
+<script setup>
+import Oplysninger from './Oplysninger.vue'
+</script>
+
+
 <template>
     <div class="content-container">
-      <h1 v-cloak class="title">BD Law</h1>
+        <Oplysninger />
+        <h1 v-cloak class="title">BD Law</h1>
       <h1 v-cloak class="tagline">LET'S GET LEGAL</h1>
     </div>
 </template>

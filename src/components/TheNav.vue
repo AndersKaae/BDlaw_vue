@@ -1,6 +1,19 @@
+<script>
+  export default {
+    props: ['modelValue'],
+    emits: ['update:modelValue'],
+    methods: {
+    toggleBox(modelValue) {
+      modelValue = !modelValue
+      this.$emit('update:modelValue', modelValue)
+    }
+  }
+}
+  </script>
+
 <template>
 <div class="navContainer">
-        <li @click="increment('TEST')">Oplysninger</li>
+        <li @click=toggleBox(modelValue)>Oplysninger</li>
         <li>Datapolitik</li>
         <li>Betingelser</li>
         <li>Kontakt</li>
@@ -26,19 +39,3 @@ li {
     cursor: pointer;
 }
 </style>
-
-<script>
-export default {
-  data() {
-    return {
-      count: 1
-    }
-  },
-  methods: {
-    increment() {
-      this.count++
-      console.log(this.count)
-    }
-  }
-}
-</script>

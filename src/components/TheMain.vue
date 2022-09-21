@@ -1,11 +1,16 @@
-<script setup>
+<script>
 import Oplysninger from './Oplysninger.vue'
+export default{
+    components: { Oplysninger },
+    props: ['oplysningerDisplay'],
+}
+
 </script>
-
-
 <template>
     <div class="content-container">
-        <Oplysninger />
+        <div v-if="oplysningerDisplay">
+            <Oplysninger />
+        </div>
         <h1 v-cloak class="title">BD Law</h1>
       <h1 v-cloak class="tagline">LET'S GET LEGAL</h1>
     </div>

@@ -1,14 +1,23 @@
-<script setup>
-import TheNav from './components/TheNav.vue'
-import TheMain from './components/TheMain.vue'
+<script>
+  import TheNav from './components/TheNav.vue'
+  import TheMain from './components/TheMain.vue'
+  
+  export default {
+    components: { TheNav, TheMain},
+    data() {
+      return {
+          oplysningerDisplay: false
+      }
+    }
+  }
 </script>
 
 <template>
     <div class="sun"></div>
     <div class="overlay"></div>
     <div class="overlay glitch"></div>
-    <TheNav />
-    <TheMain />
+    <TheNav v-model="oplysningerDisplay"/>
+    <TheMain :oplysningerDisplay= "oplysningerDisplay" />
 </template>
 
 <style scoped>

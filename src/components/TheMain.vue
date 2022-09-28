@@ -1,15 +1,19 @@
 <script>
 import Oplysninger from './Oplysninger.vue'
+import Datapolitik from './Datapolitik.vue';
 export default{
-    components: { Oplysninger },
-    props: ['oplysningerDisplay'],
+    components: { Oplysninger, Datapolitik },
+    props: ['oplysningerDisplay','windowState'],
 }
 
 </script>
 <template>
     <div class="content-container">
-        <div v-if="oplysningerDisplay">
+        <div v-if="windowState.oplysninger">
             <Oplysninger />
+        </div>
+        <div v-if="windowState.datapolitik">
+            <Datapolitik />
         </div>
         <h1 v-cloak class="title">BD Law</h1>
       <h1 v-cloak class="tagline">LET'S GET LEGAL</h1>

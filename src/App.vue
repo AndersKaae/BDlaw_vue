@@ -6,7 +6,10 @@
     components: { TheNav, TheMain},
     data() {
       return {
-          oplysningerDisplay: false
+          windowState: {
+            oplysninger: false,
+            datapolitik: false
+          }
       }
     }
   }
@@ -16,8 +19,12 @@
     <div class="sun"></div>
     <div class="overlay"></div>
     <div class="overlay glitch"></div>
-    <TheNav v-model="oplysningerDisplay"/>
-    <TheMain :oplysningerDisplay= "oplysningerDisplay" />
+    <TheNav 
+      v-model:windowState="windowState"
+    />
+    <TheMain 
+      :windowState="windowState" 
+    />
 </template>
 
 <style scoped>

@@ -1,11 +1,21 @@
 <script>
   export default {
-    props: ['modelValue'],
-    emits: ['update:modelValue'],
+    props: ['windowState'],
+    emits: ['update:windowState'],
     methods: {
-    toggleBox(modelValue) {
-      modelValue = !modelValue
-      this.$emit('update:modelValue', modelValue)
+      toggleOpylsninger(type) {
+        var data = this.windowState;
+        if (type == 'oplysninger') {
+          data.oplysninger =! data.oplysninger
+        }
+        if (type == 'datapolitik') {
+          data.datapolitik =! data.datapolitik
+        }
+      this.$emit('update:windowState', data)
+    },
+    toggleDatapolitik(windowState) {
+      windowState.datapolitik = !windowState.datapolitik
+      this.$emit('update:windowState', windowState)
     }
   }
 }
@@ -13,8 +23,8 @@
 
 <template>
 <div class="navContainer">
-        <li @click=toggleBox(modelValue)>Oplysninger</li>
-        <li>Datapolitik</li>
+        <li @click="toggleOpylsninger('oplysninger')">Oplysninger</li>
+        <li @click="toggleOpylsninger('datapolitik')">Datapolitik</li>
         <li>Betingelser</li>
         <li>Kontakt</li>
 </div>
